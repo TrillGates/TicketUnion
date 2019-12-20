@@ -13,12 +13,38 @@ import androidx.fragment.app.Fragment
 abstract class BaseFragment : Fragment() {
 
 
-    override fun onCreateView(inflater: LayoutInflater,
+    override fun onCreateView(
+        inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
-        return subCreateView(inflater,container)
+        savedInstanceState: Bundle?
+    ): View? {
+        return subCreateView(inflater, container)
     }
 
-    abstract fun subCreateView(inflater: LayoutInflater?,
-        container: ViewGroup?): View?
+    abstract fun subCreateView(
+        inflater: LayoutInflater?,
+        container: ViewGroup?
+    ): View?
+
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        initView()
+        //设置相关的事件
+        initEvent()
+        //载入数据
+        loadData()
+    }
+
+    open fun initView() {
+        
+    }
+
+    open fun loadData() {
+
+    }
+
+    open fun initEvent() {
+
+    }
 }

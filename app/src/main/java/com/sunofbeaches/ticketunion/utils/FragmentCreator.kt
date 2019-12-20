@@ -1,8 +1,8 @@
 package com.sunofbeaches.ticketunion.utils
 
 import com.sunofbeaches.ticketunion.base.BaseFragment
+import com.sunofbeaches.ticketunion.ui.fragment.HomeFragment
 import com.sunofbeaches.ticketunion.ui.fragment.OnSellFragment
-import com.sunofbeaches.ticketunion.ui.fragment.RecommendFragment
 import com.sunofbeaches.ticketunion.ui.fragment.SearchFragment
 import com.sunofbeaches.ticketunion.ui.fragment.SelectedFragment
 
@@ -13,10 +13,10 @@ import com.sunofbeaches.ticketunion.ui.fragment.SelectedFragment
 class FragmentCreator {
 
     companion object {
-        public const val INDEX_RECOMMEND = 1
-        public const val INDEX_ON_SELL = 2
-        public const val INDEX_SELECTED = 3
-        public const val INDEX_SEARCH = 4
+        const val INDEX_RECOMMEND = 1
+        const val INDEX_ON_SELL = 2
+        const val INDEX_SELECTED = 3
+        const val INDEX_SEARCH = 4
 
         private val fragmentMap = HashMap<Int, BaseFragment>()
 
@@ -27,7 +27,7 @@ class FragmentCreator {
             } else {
                 when (index) {
                     INDEX_RECOMMEND -> {
-                        baseFragment = RecommendFragment()
+                        baseFragment = HomeFragment()
                     }
                     INDEX_ON_SELL -> {
                         baseFragment = OnSellFragment()
@@ -47,7 +47,6 @@ class FragmentCreator {
             }
         }
     }
-
 
 
 }

@@ -2,8 +2,13 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#F5A623</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#B5B5B5</color>
 
 
     <color name="colorTextNormal">#8E8E93</color>
+    <color name="white">#ffffff</color>
+    <color name="colorBackground">#EFEEEE</color>
+    <color name="origin">#F5A623</color>
+    <color name="grey">#9B9B9B</color>
+    <color name="deep_red">#D0021B</color>
 </resources>

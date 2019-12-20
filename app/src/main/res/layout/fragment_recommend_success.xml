@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/origin">
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:src="@mipmap/scan_white" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="54dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="54dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/editor_bg"
+            android:focusable="false"
+            android:hint="搜索优惠券..."
+            android:maxLines="1"
+            android:paddingLeft="11dp"
+            android:paddingRight="11dp"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:src="@mipmap/search_white" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/recommend_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
