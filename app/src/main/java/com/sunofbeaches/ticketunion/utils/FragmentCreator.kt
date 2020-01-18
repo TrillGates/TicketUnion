@@ -1,6 +1,6 @@
 package com.sunofbeaches.ticketunion.utils
 
-import com.sunofbeaches.ticketunion.base.BaseFragment
+import androidx.fragment.app.Fragment
 import com.sunofbeaches.ticketunion.ui.fragment.HomeFragment
 import com.sunofbeaches.ticketunion.ui.fragment.OnSellFragment
 import com.sunofbeaches.ticketunion.ui.fragment.SearchFragment
@@ -18,33 +18,35 @@ class FragmentCreator {
         const val INDEX_SELECTED = 3
         const val INDEX_SEARCH = 4
 
-        private val fragmentMap = HashMap<Int, BaseFragment>()
+        private val homeFragment: HomeFragment by lazy {
+            HomeFragment()
+        }
+        private val onSellFragment: OnSellFragment by lazy {
+            OnSellFragment()
+        }
+        private val selectedFragment: SelectedFragment by lazy {
+            SelectedFragment()
+        }
+        private val searchFragment: SearchFragment by lazy {
+            SearchFragment()
+        }
 
-        fun getFragment(index: Int): BaseFragment? {
-            var baseFragment = fragmentMap[index]
-            if (baseFragment != null) {
-                return baseFragment
-            } else {
-                when (index) {
-                    INDEX_RECOMMEND -> {
-                        baseFragment = HomeFragment()
-                    }
-                    INDEX_ON_SELL -> {
-                        baseFragment = OnSellFragment()
-                    }
-                    INDEX_SELECTED -> {
-                        baseFragment = SelectedFragment()
-                    }
-                    INDEX_SEARCH -> {
-                        baseFragment = SearchFragment()
-                    }
+        fun getFragment(index: Int): Fragment? {
+            when (index) {
+                INDEX_RECOMMEND -> {
+                    return homeFragment
                 }
-                //保存起来
-                if (baseFragment != null) {
-                    fragmentMap[index] = baseFragment
+                INDEX_ON_SELL -> {
+                    return onSellFragment
                 }
-                return baseFragment
+                INDEX_SELECTED -> {
+                    return selectedFragment
+                }
+                INDEX_SEARCH -> {
+                    return searchFragment
+                }
             }
+            return null
         }
     }
 

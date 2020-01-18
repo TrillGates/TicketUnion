@@ -16,7 +16,8 @@ class RetrofitManager {
     }
 
     companion object {
-        const val BASE_URL: String = "http://www.sunofbeaches.com/shop/api/"
+        const val BASE_URL: String = "https://www.sunofbeach.net/shop/api/"
+       // const val BASE_URL: String = "http://10.0.2.2:50200/shop/api/"
         var instance: RetrofitManager? = null
             get() {
                 if (field == null) {

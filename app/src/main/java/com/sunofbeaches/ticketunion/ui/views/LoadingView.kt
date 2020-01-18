@@ -10,8 +10,9 @@ import com.sunofbeaches.ticketunion.utils.LogUtils
 class LoadingView(context: Context, attrs: AttributeSet, defStyleAttr: Int) :
     AppCompatImageView(context, attrs, defStyleAttr) {
 
-    companion object {
-        const val TAG = "LoadingView"
+
+    init {
+        LogUtils.d(this, "LoadingView init....")
     }
 
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs!!, 0)
@@ -22,16 +23,16 @@ class LoadingView(context: Context, attrs: AttributeSet, defStyleAttr: Int) :
     private var rotateDegree = 0.0f
 
     override fun onAttachedToWindow() {
-        LogUtils.d(TAG, "onAttachedToWindow...")
+        LogUtils.d(this, "onAttachedToWindow...")
         super.onAttachedToWindow()
         startRotate()
     }
 
-    public fun startRotate() {
+    fun startRotate() {
         needRotating = true
         post(object : Runnable {
             override fun run() {
-              //  LogUtils.d(TAG, "rotating...")
+                //  LogUtils.d(TAG, "rotating...")
                 rotateDegree += 10.0f
                 //范围判断，如果超过了360度，则变成0度
                 rotateDegree = if (rotateDegree <= 360) rotateDegree else 0.0f
@@ -47,16 +48,16 @@ class LoadingView(context: Context, attrs: AttributeSet, defStyleAttr: Int) :
 
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
-        LogUtils.d(TAG, "onDetachedFromWindow...")
+        LogUtils.d(this, "onDetachedFromWindow...")
         stopRotate()
     }
 
-    public fun stopRotate() {
+    fun stopRotate() {
         needRotating = false
     }
 
     override fun onDraw(canvas: Canvas?) {
-       // LogUtils.d(TAG, "rotateDegree -- > $rotateDegree")
+        // LogUtils.d(TAG, "rotateDegree -- > $rotateDegree")
         canvas?.rotate(rotateDegree, (width / 2).toFloat(), (height / 2).toFloat())
         super.onDraw(canvas)
     }

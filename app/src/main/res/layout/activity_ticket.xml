@@ -10,6 +10,7 @@
         android:background="@color/origin">
 
         <ImageView
+            android:id="@+id/back_btn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
@@ -23,33 +24,88 @@
             android:layout_centerInParent="true"
             android:text="淘口令"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
 
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/ticket_goods_cover"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:background="@color/grey" />
+    <LinearLayout
+        android:id="@+id/success_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:layout_width="244dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/editor_bg" />
 
-    <TextView
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/tab_bg"
-        android:gravity="center"
-        android:text="领券"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp">
+
+            <ImageView
+                android:id="@+id/ticket_goods_cover"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:background="@color/grey" />
+
+            <com.sunofbeaches.ticketunion.ui.views.LoadingView
+                android:id="@+id/ticket_loading_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/loading" />
+
+            <TextView
+                android:id="@+id/network_error_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="网络错误，请点击重试."
+                android:textColor="@color/white"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/ticket_result"
+            android:layout_width="244dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/editor_bg"
+            android:focusable="false"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/get_ticket_btn"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/tab_bg"
+            android:gravity="center"
+            android:text="领券"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="打开淘宝，即可领取优惠券，祝你好运！" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/scan_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="二维码识别出错" />
+    </RelativeLayout>
+
 </LinearLayout>

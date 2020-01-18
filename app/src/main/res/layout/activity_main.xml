@@ -1,71 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
 
-
-    <FrameLayout
-        android:id="@+id/page_container"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="60dp" />
+        android:layout_height="match_parent">
 
-    <RadioGroup
-        android:id="@+id/navigation_bar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:paddingTop="5dp">
+        <FrameLayout
+            android:id="@+id/page_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="60dp"
+            app:layout_behavior="com.sunofbeaches.ticketunion.ui.behavior.HomeSearchBarBehavior" />
 
-        <RadioButton
-            android:id="@+id/navigation_recommend"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:checked="true"
-            android:drawableTop="@drawable/home_selector"
-            android:text="推荐"
-            android:textAlignment="center"
-            android:textColor="@drawable/navigation_text_selector" />
+        <RadioGroup
+            android:id="@+id/navigation_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@color/white99"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
 
-        <RadioButton
-            android:id="@+id/navigation_on_sell"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/on_sell_selector"
-            android:text="特惠"
-            android:textAlignment="center"
-            android:textColor="@drawable/navigation_text_selector" />
+            <RadioButton
+                android:id="@+id/navigation_recommend"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/home_selector"
+                android:text="推荐"
+                android:textAlignment="center"
+                android:textColor="@drawable/navigation_text_selector" />
 
-        <RadioButton
-            android:id="@+id/navigation_selected"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/select_selector"
-            android:text="精选"
-            android:textAlignment="center"
-            android:textColor="@drawable/navigation_text_selector" />
+            <RadioButton
+                android:id="@+id/navigation_on_sell"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/on_sell_selector"
+                android:text="特惠"
+                android:textAlignment="center"
+                android:textColor="@drawable/navigation_text_selector" />
+
+            <RadioButton
+                android:id="@+id/navigation_selected"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/select_selector"
+                android:text="精选"
+                android:textAlignment="center"
+                android:textColor="@drawable/navigation_text_selector" />
 
 
-        <RadioButton
-            android:id="@+id/navigation_search"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/search_selector"
-            android:text="搜索"
-            android:textAlignment="center"
-            android:textColor="@drawable/navigation_text_selector" />
+            <RadioButton
+                android:id="@+id/navigation_search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/search_selector"
+                android:text="搜索"
+                android:textAlignment="center"
+                android:textColor="@drawable/navigation_text_selector" />
 
-    </RadioGroup>
+        </RadioGroup>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
 </RelativeLayout>

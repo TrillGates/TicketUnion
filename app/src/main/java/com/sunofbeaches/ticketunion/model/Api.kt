@@ -1,13 +1,8 @@
 package com.sunofbeaches.ticketunion.model
 
-import com.sunofbeaches.ticketunion.domain.ContentItem
-import com.sunofbeaches.ticketunion.domain.MainCategoryItem
-import com.sunofbeaches.ticketunion.domain.TickerResult
+import com.sunofbeaches.ticketunion.model.domain.*
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
-import retrofit2.http.Url
+import retrofit2.http.*
 
 interface Api {
     /**
@@ -20,10 +15,37 @@ interface Api {
      * 根据分类，获取到内容
      */
     @GET
-    fun getContentListByMaterialId(@Url url: String): Call<ContentItem>
+    fun getContentListByMaterialId(@Url url: String): Call<CategoryPageItem>
 
+
+    /**
+     * 获取淘口令
+     */
     @POST("tpwd")
-    fun getTicketByUrl(@Query("url") url: String): Call<TickerResult>
+    fun getTicketByUrl(@Body body: TicketRequestItem): Call<TickerResult>
 
+    /**
+     * 获取特惠内容
+     */
+    @GET
+    fun getOnSellGoods(@Url url: String): Call<OnSellResultItem>
+
+    /**
+     * 获取精选的类型
+     */
+    @GET("recommend/categories")
+    fun loadPickTypeList(): Call<PickTypeItem>
+
+    /**
+     * 获取精选内容
+     */
+    @GET
+    fun getPickContentList(@Url url: String): Call<PickContentItem>
+
+    @GET("search")
+    fun doSearch(@Query("page") page: Int, @Query("keyword") keyword: String): Call<SearchResult>
+
+    @GET("search/recommend")
+    fun getSearchRecommend(): Call<SearchRecommend>
 
 }

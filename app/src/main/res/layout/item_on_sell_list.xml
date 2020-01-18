@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="5dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="2dp"
+    app:contentPadding="12dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/on_sell_goods_cover"
+            android:layout_width="match_parent"
+            android:layout_height="160dp" />
+
+        <TextView
+            android:id="@+id/on_sell_list_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="标题"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/on_sell_origin_prise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="58.90"
+                android:textColor="@color/prise_origin_text_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/on_sell_result_prise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="券后价：28.80"
+                android:textColor="@color/prise_origin_text_color"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
