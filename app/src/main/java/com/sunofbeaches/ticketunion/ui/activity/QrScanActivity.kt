@@ -303,7 +303,7 @@ class QrScanActivity : BaseActivity<QrCodeScanPresenterImpl>(), IQrCodeScanPageC
         inactivityTimer?.onActivity()
         //扫描成功之后的振动与声音提示
         RxBeepTool.playBeep(this, vibrate)
-        presenter?.handleResult(result)
+      //  presenter?.handleResult(result)
     }
 
 

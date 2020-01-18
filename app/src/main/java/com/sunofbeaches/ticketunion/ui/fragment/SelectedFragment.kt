@@ -5,6 +5,7 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
@@ -72,12 +73,16 @@ class SelectedFragment : BaseFragment<SelectedPagePresenterImpl>(), ISelectedPag
     @BindView(R.id.page_header)
     lateinit var pageHeader: View
 
+    @BindView(R.id.pager_header_title)
+    lateinit var title: TextView
+
 
     //列表的适配器
     private var contentListAdapter: PickContentListAdapter? = null
 
 
     override fun initView(rootView: View) {
+        title.text = "精选宝贝"
         //左侧分类设置适配器
         if (typeAdapter == null) {
             typeAdapter = PickTypeAdapter()
