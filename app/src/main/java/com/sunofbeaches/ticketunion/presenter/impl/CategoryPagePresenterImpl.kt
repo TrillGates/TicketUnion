@@ -1,16 +1,18 @@
 package com.sunofbeaches.ticketunion.presenter.impl
 
+import com.sunofbeaches.ticketunion.base.BasePresenter
 import com.sunofbeaches.ticketunion.model.domain.CategoryPageItem
-import com.sunofbeaches.ticketunion.presenter.CategoryPagePresenter
+import com.sunofbeaches.ticketunion.presenter.ICategoryPagePresenter
 import com.sunofbeaches.ticketunion.utils.LogUtils
 import com.sunofbeaches.ticketunion.utils.UrlUtils
+import com.sunofbeaches.ticketunion.view.IHomeCategoryPageCallback
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.net.HttpURLConnection
 
 class CategoryPagePresenterImpl :
-    CategoryPagePresenter() {
+    ICategoryPagePresenter , BasePresenter<IHomeCategoryPageCallback>() {
 
     override fun reload(categoryId: Int) {
         getCategoryContentById(categoryId)

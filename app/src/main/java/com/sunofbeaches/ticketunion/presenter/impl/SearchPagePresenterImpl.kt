@@ -1,19 +1,21 @@
 package com.sunofbeaches.ticketunion.presenter.impl
 
+import com.sunofbeaches.ticketunion.base.BasePresenter
 import com.sunofbeaches.ticketunion.model.domain.HistoryItem
 import com.sunofbeaches.ticketunion.model.domain.SearchRecommend
 import com.sunofbeaches.ticketunion.model.domain.SearchResult
-import com.sunofbeaches.ticketunion.presenter.SearchPagerPresenter
+import com.sunofbeaches.ticketunion.presenter.ISearchPagerPresenter
 import com.sunofbeaches.ticketunion.utils.Constants
 import com.sunofbeaches.ticketunion.utils.JsonCacheUtil
 import com.sunofbeaches.ticketunion.utils.LogUtils
+import com.sunofbeaches.ticketunion.view.ISearchPageCallback
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.net.HttpURLConnection
 
 
-class SearchPagePresenterImpl : SearchPagerPresenter() {
+class SearchPagePresenterImpl : ISearchPagerPresenter, BasePresenter<ISearchPageCallback>(){
     override fun getRecommendWords() {
         //获取推荐的词
         val task = mApi?.getSearchRecommend()

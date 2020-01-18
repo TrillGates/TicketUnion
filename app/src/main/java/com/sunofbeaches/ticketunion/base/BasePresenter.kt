@@ -6,7 +6,7 @@ import com.sunofbeaches.ticketunion.utils.RetrofitManager
  * Created by TrillGates on 2019-12-17.
  * God bless my code!
  */
-abstract class BasePresenter<C> {
+open class BasePresenter<C> {
 
     protected val callbacks: ArrayList<C> = ArrayList()
 
@@ -26,6 +26,6 @@ abstract class BasePresenter<C> {
     }
 
     open fun reload() {
-        
+
     }
 }

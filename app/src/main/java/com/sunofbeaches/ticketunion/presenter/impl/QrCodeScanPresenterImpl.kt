@@ -2,12 +2,14 @@ package com.sunofbeaches.ticketunion.presenter.impl
 
 import android.util.Log
 import com.google.zxing.Result
+import com.sunofbeaches.ticketunion.base.BasePresenter
 import com.sunofbeaches.ticketunion.presenter.QrCodeScanPresenter
 import com.sunofbeaches.ticketunion.utils.PresenterManager
+import com.sunofbeaches.ticketunion.view.IQrCodeScanPageCallback
 import com.vondear.rxfeature.module.scaner.CameraManager
 
 class QrCodeScanPresenterImpl :
-    QrCodeScanPresenter() {
+    QrCodeScanPresenter, BasePresenter<IQrCodeScanPageCallback>()  {
 
 
     override fun handleResult(result: Result) {

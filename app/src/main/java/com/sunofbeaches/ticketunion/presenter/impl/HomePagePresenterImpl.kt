@@ -1,10 +1,12 @@
 package com.sunofbeaches.ticketunion.presenter.impl
 
+import com.sunofbeaches.ticketunion.base.BasePresenter
 import com.sunofbeaches.ticketunion.model.domain.MainCategoryItem
-import com.sunofbeaches.ticketunion.presenter.HomePagePresenter
+import com.sunofbeaches.ticketunion.presenter.IHomePagePresenter
 import com.sunofbeaches.ticketunion.utils.Constants
 import com.sunofbeaches.ticketunion.utils.JsonCacheUtil
 import com.sunofbeaches.ticketunion.utils.LogUtils
+import com.sunofbeaches.ticketunion.view.IHomePageCallback
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -15,7 +17,7 @@ import java.net.HttpURLConnection
  * God bless my code!
  */
 class HomePagePresenterImpl :
-    HomePagePresenter() {
+    IHomePagePresenter, BasePresenter<IHomePageCallback>() {
 
     override fun reload() {
         loadCategories()

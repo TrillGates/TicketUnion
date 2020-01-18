@@ -1,5 +1,6 @@
 package com.sunofbeaches.ticketunion.presenter.impl
 
+import com.sunofbeaches.ticketunion.base.BasePresenter
 import com.sunofbeaches.ticketunion.model.domain.TickerResult
 import com.sunofbeaches.ticketunion.model.domain.TicketRequestItem
 import com.sunofbeaches.ticketunion.presenter.TicketPresenter
@@ -11,7 +12,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.net.HttpURLConnection
 
-class TicketPresenterImpl : TicketPresenter() {
+class TicketPresenterImpl : TicketPresenter, BasePresenter<ITicketCallback>() {
     override fun reload() {
         loadTicketByItem(this.url!!, this.title!!, this.cover!!)
     }

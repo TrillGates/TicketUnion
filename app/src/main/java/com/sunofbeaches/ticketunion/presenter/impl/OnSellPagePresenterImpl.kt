@@ -1,15 +1,17 @@
 package com.sunofbeaches.ticketunion.presenter.impl
 
+import com.sunofbeaches.ticketunion.base.BasePresenter
 import com.sunofbeaches.ticketunion.model.domain.OnSellResultItem
-import com.sunofbeaches.ticketunion.presenter.OnSellPagePresenter
+import com.sunofbeaches.ticketunion.presenter.IOnSellPagePresenter
 import com.sunofbeaches.ticketunion.utils.LogUtils
 import com.sunofbeaches.ticketunion.utils.UrlUtils
+import com.sunofbeaches.ticketunion.view.IOnSellPageCallback
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.net.HttpURLConnection
 
-class OnSellPagePresenterImpl : OnSellPagePresenter(){
+class OnSellPagePresenterImpl : IOnSellPagePresenter, BasePresenter<IOnSellPageCallback>() {
     override fun reload() {
         loadOnSellContent()
     }

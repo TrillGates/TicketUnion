@@ -1,13 +1,10 @@
 package com.sunofbeaches.ticketunion.presenter
 
-import com.sunofbeaches.ticketunion.base.BasePresenter
-import com.sunofbeaches.ticketunion.view.ISelectedPageCallback
+interface SelectedPagePresenter  {
 
-abstract class SelectedPagePresenter : BasePresenter<ISelectedPageCallback>() {
+    fun loadPickType()
 
-    abstract fun loadPickType()
-
-    abstract fun loadPickContentById(categoryId: Int)
+    fun loadPickContentById(categoryId: Int)
 
 
 

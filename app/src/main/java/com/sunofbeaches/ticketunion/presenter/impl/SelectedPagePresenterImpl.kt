@@ -1,16 +1,18 @@
 package com.sunofbeaches.ticketunion.presenter.impl
 
+import com.sunofbeaches.ticketunion.base.BasePresenter
 import com.sunofbeaches.ticketunion.model.domain.PickContentItem
 import com.sunofbeaches.ticketunion.model.domain.PickTypeItem
 import com.sunofbeaches.ticketunion.presenter.SelectedPagePresenter
 import com.sunofbeaches.ticketunion.utils.LogUtils
 import com.sunofbeaches.ticketunion.utils.UrlUtils
+import com.sunofbeaches.ticketunion.view.ISelectedPageCallback
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.net.HttpURLConnection
 
-class SelectedPagePresenterImpl : SelectedPagePresenter() {
+class SelectedPagePresenterImpl : SelectedPagePresenter, BasePresenter<ISelectedPageCallback>() {
     override fun reload() {
         loadPickType()
     }
